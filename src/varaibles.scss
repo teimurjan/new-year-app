@@ -1,0 +1,38 @@
+$warningColor: #f9c80e;
+$infoColor: #0CCE6B;
+$successColor: #00a1e4;
+$dangerColor: #c84630;
+
+$whiteColor: #ffffff;
+$lightGrayColor: #ebdede;
+$darkGrayColor: #414042;
+
+$linkColor: $darkGrayColor;
+$linkHoverColor: darken($linkColor, 20%);
+
+$offsetXS: 5px;
+$offsetS: 10px;
+$offsetM: 15px;
+$offsetL: 20px;
+$offsetXL: 25px;
+
+$fontXS: 12px;
+$fontS: 14px;
+$fontM: 16px;
+$fontL: 18px;
+$fontXL: 20px;
+
+$mediaWidthM: 768px;
+
+@mixin container {
+  margin: 0 auto;
+  padding-left: 70px;
+  padding-right: 70px;
+  max-width: 1292px;
+
+  @media (max-width: $mediaWidthM) {
+    padding-left: 25px;
+    padding-right: 25px;
+    max-width: 1252px;
+  }
+}

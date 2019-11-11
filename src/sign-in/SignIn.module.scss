@@ -1,0 +1,29 @@
+@import "src/varaibles.scss";
+
+.signIn {
+  background: lighten($warningColor, 30%);
+
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &__error {
+    width: 400px;
+    margin-top: $offsetL;
+  }
+}
+
+.santa {
+  margin-top: -10vh;
+
+  max-height: 400px;
+
+  svg {
+    height: 100%;
+  }
+}

@@ -1,0 +1,36 @@
+@import "src/varaibles.scss";
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Source Sans Pro", cursive;
+}
+
+a {
+  color: $linkColor;
+  font-weight: 600;
+
+  transition: color 100ms ease-in-out;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $linkHoverColor;
+  }
+}
+
+input,
+button {
+  outline: unset;
+  &:hover,
+  &:active,
+  &:focus {
+    outline: unset;
+  }
+}

@@ -1,26 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  Switch,
+  Route,
+  Redirect,
+  BrowserRouter as Router
+} from "react-router-dom";
+
+import SignIn from "./sign-in";
+import { useAuth } from "./auth/context";
+import LoadingLayout from "./loading-layout";
+import Navbar from "./navbar";
+import Wishlist from "./wishlist";
+import WishesToPerform from "./wishes-to-perform";
 
 const App: React.FC = () => {
+  const { user, isInitiallyFetched } = useAuth()!;
+
+  const hasUser = Boolean(user);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Router>
+        {hasUser && <Navbar />}
+        {!hasUser && isInitiallyFetched && <Redirect to="/signIn" />}
+        <Switch>
+          <Route
+            render={({ location: { pathname } }) =>
+              isInitiallyFetched && hasUser && pathname === "/signIn" ? (
+                <Redirect to="/" />
+              ) : (
+                <SignIn />
+              )
+            }
+            path="/signIn"
+            exact
+          ></Route>
+          <Route path="/wishes" exact>
+            <WishesToPerform />
+          </Route>
+          <Route path="/">
+            <Wishlist />
+          </Route>
+        </Switch>
+        <LoadingLayout in={!isInitiallyFetched} />
+      </Router>
     </div>
   );
-}
+};
 
 export default App;

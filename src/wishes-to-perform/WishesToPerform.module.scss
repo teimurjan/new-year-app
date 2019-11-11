@@ -1,0 +1,27 @@
+@import "src/varaibles.scss";
+
+.wishesToPerform {
+  margin: $offsetL 0;
+}
+
+.wishes {
+  background: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
+  border-radius: 5px;
+  padding: $offsetS;
+
+  h3 {
+    color: $whiteColor;
+    margin-top: 0;
+  }
+}
+
+.empty {
+  padding: $offsetM 0;
+  font-size: $fontL;
+  font-weight: 600;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+}

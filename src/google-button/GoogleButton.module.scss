@@ -1,0 +1,21 @@
+@import "src/varaibles.scss";
+
+.googleBtn {
+  position: relative;
+
+  &__logo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: $offsetS;
+    height: 35px;
+
+    svg {
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  width: 80vw;
+  max-width: 400px;
+}

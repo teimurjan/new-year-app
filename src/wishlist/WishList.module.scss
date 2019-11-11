@@ -1,0 +1,34 @@
+@import "src/varaibles.scss";
+
+.submitBtn {
+  position: relative;
+  top: 25px;
+  align-self: baseline;
+}
+
+.wishList {
+  margin: $offsetL 0;
+}
+
+.wishes {
+  background: linear-gradient(-20deg, #82f3ff 0%, #4ccaff 100%);
+  border-radius: 5px;
+  padding: $offsetS;
+
+  h3 {
+    color: $whiteColor;
+    margin-top: 0;
+  }
+
+  margin-bottom: $offsetL;
+}
+.empty {
+  padding: $offsetM 0;
+  font-size: $fontL;
+  font-weight: 600;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+}

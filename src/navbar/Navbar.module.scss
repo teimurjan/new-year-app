@@ -1,0 +1,114 @@
+@import "src/varaibles.scss";
+
+.navbar {
+  padding: $offsetS 0;
+}
+
+.navbarInner {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: $mediaWidthM) {
+    @include container;
+
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 40px);
+    background: $whiteColor;
+    z-index: 2;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: unset;
+
+    transform: scale(0);
+
+    .navLinks {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      .navLink {
+          margin-bottom: $offsetM;
+      }
+    }
+  }
+}
+
+.open {
+  .navbarInner {
+    @media (max-width: $mediaWidthM) {
+      transform: scale(1);
+    }
+  }
+}
+
+.navLink {
+  margin-right: $offsetL;
+  font-size: $fontM;
+}
+
+$menuIconBarsCount: 3;
+$menuIconBarHeight: 3;
+$menuIconBarSpacing: 6;
+$menuIconBarWidth: 25;
+
+.navBurger {
+  display: none;
+  position: relative;
+  margin-left: auto;
+  width: $menuIconBarWidth + px;
+  height: #{($menuIconBarHeight + $menuIconBarSpacing) * $menuIconBarsCount}px;
+
+  &:focus {
+    outline: 0;
+    outline-color: transparent;
+    outline-style: none;
+  }
+
+  @media (max-width: $mediaWidthM) {
+    display: block;
+  }
+}
+
+.open {
+  .navBurgerBar:nth-of-type(1) {
+    transform: rotateZ(-45deg);
+  }
+
+  .navBurgerBar:nth-of-type(2) {
+    opacity: 0;
+  }
+
+  .navBurgerBar:nth-of-type(3) {
+    transform: rotateZ(45deg);
+  }
+}
+
+.navBurgerBar {
+  transition: all 300ms ease-in-out;
+  background: $darkGrayColor;
+
+  position: absolute;
+  left: 0;
+  height: $menuIconBarHeight + px;
+  width: $menuIconBarWidth + px;
+}
+
+.navBurgerBar:nth-of-type(1) {
+  top: 0;
+  transform-origin: center right;
+}
+
+.navBurgerBar:nth-of-type(2) {
+  top: #{$menuIconBarSpacing + $menuIconBarHeight}px;
+  opacity: 1;
+}
+
+.navBurgerBar:nth-of-type(3) {
+  top: #{($menuIconBarSpacing + $menuIconBarHeight) * 2}px;
+  transform-origin: center right;
+}

@@ -1,0 +1,93 @@
+@import "src/varaibles.scss";
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: $offsetS $offsetM;
+
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.05), 0px 0px 3px rgba(0, 0, 0, 0.15);
+  background: $whiteColor;
+  color: $darkGrayColor;
+  border: 1px solid $lightGrayColor;
+
+  font-size: $fontM;
+
+  transition: all 100ms ease-in-out;
+
+  cursor: pointer;
+
+  text-decoration: none;
+  font-weight: 400;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  text-rendering: auto;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border: 1px solid $darkGrayColor;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.warning {
+  background: $warningColor;
+  color: $whiteColor;
+  border: 1px solid warningColor;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: darken($warningColor, 10%);
+    border: 1px solid darken($warningColor, 10%);
+  }
+}
+.info {
+  background: $infoColor;
+  color: $whiteColor;
+  border: 1px solid $infoColor;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: darken($infoColor, 10%);
+    border: 1px solid darken($infoColor, 10%);
+  }
+}
+.success {
+  background: $successColor;
+  color: $whiteColor;
+  border: 1px solid $successColor;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: darken($successColor, 10%);
+    border: 1px solid darken($successColor, 10%);
+  }
+}
+.danger {
+  background: $dangerColor;
+  color: $whiteColor;
+  border: 1px solid $dangerColor;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: darken($dangerColor, 10%);
+    border: 1px solid darken($dangerColor, 10%);
+  }
+}
+.large {
+  padding: $offsetM $offsetL;
+
+  font-size: $fontL;
+}

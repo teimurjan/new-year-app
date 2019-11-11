@@ -1,0 +1,43 @@
+@import "src/varaibles.scss";
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  .formField {
+    margin-top: $offsetS;
+  }
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+}
+
+.formLabel {
+  font-size: $fontM;
+}
+
+.formInput {
+  padding: $offsetXS $offsetS;
+  font-size: $fontM;
+
+  border: 1px solid $darkGrayColor;
+}
+
+.formInline {
+  flex-direction: row;
+
+  @media (max-width: $mediaWidthM) {
+    flex-direction: column;
+  }
+
+  .formField {
+    margin-right: $offsetS;
+  }
+}
+
+.formError {
+  font-size: $fontS;
+  color: $dangerColor;
+}

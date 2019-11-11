@@ -1,0 +1,8 @@
+@import "src/varaibles.scss";
+
+.error {
+  padding: $offsetS $offsetM;
+  background: lighten($dangerColor, 30%);
+  color: darken($dangerColor, 20%);
+  border: 1px solid darken($dangerColor, 20%);
+}

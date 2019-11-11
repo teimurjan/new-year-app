@@ -1,0 +1,81 @@
+@import "src/varaibles.scss";
+
+.wishItem {
+  position: relative;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  padding: $offsetL $offsetS $offsetS $offsetS;
+
+  transition: all 300ms ease-in-out;
+
+  background: lighten(rgba($successColor, 0.9), 60%);
+
+  font-weight: normal;
+  text-decoration: none;
+  color: $darkGrayColor;
+  &:hover,
+  &:focus,
+  &:active {
+    color: $darkGrayColor;
+
+    background: lighten(rgba($successColor, 0.8), 60%);
+  }
+
+  border-bottom: 1px solid $lightGrayColor;
+}
+
+.name {
+  font-size: $fontXL;
+  margin: 0;
+  font-weight: 600;
+}
+
+.userName {
+  margin-top: $offsetM;
+}
+
+.close,
+.add {
+  cursor: pointer;
+  font-size: $fontXL;
+
+  position: absolute;
+
+  height: 20px;
+  width: 20px;
+
+  svg {
+    display: block;
+  }
+}
+
+.close {
+  top: $offsetXS;
+  right: $offsetXS;
+  color: red;
+}
+
+.add {
+  top: $offsetXS;
+  right: calc(#{$offsetXS} + #{$offsetXS} + 20px);
+}
+
+.wishItem:last-child {
+  border-bottom: none;
+}
+
+.activeOwner {
+  color: $infoColor;
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+
+  @media (max-width: $mediaWidthM) {
+    flex-direction: column;
+  }
+}
