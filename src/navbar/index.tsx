@@ -36,10 +36,10 @@ export default () => {
         <MenuHamburger onClick={toggle} />
         <div className={s.navbarInner} onClick={close}>
           <div className={s.navLinks}>
-            <Link className={s.navLink} to="/">
+            <Link className={s.navLink} to="/wishlist">
               Мои желания
             </Link>
-            <Link className={s.navLink} to="/wishes">
+            <Link className={s.navLink} to="/">
               Исполнить желание
             </Link>
           </div>

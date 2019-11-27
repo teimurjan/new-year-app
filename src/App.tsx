@@ -35,11 +35,11 @@ const App: React.FC = () => {
             path="/signIn"
             exact
           ></Route>
-          <Route path="/wishes" exact>
-            <WishesToPerform />
+          <Route path="/wishlist" exact>
+            <Wishlist />
           </Route>
           <Route path="/">
-            <Wishlist />
+            <WishesToPerform />
           </Route>
         </Switch>
         <LoadingLayout in={!isInitiallyFetched} />

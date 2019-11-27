@@ -57,7 +57,7 @@ export default () => {
         })}
       </div>
     );
-  }, [wishes, isInitiallyFetched]);
+  }, [wishes, isInitiallyFetched, add, remove, userEmail, wishesToPerform]);
 
   return (
     <div className={s.wishesToPerform}>

@@ -28,7 +28,7 @@ export default () => {
       <Container>
         <Santa className={s.santa} />
 
-        <GoogleButton onClick={onSignInClick} large>
+        <GoogleButton className={s.signIn__button} onClick={onSignInClick} large>
           Войти с Google
         </GoogleButton>
 

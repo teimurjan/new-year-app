@@ -1,8 +1,4 @@
-import React, {
-  useCallback,
-  useState,
-  useMemo
-} from "react";
+import React, { useCallback, useState, useMemo } from "react";
 
 import Container from "../container";
 
@@ -40,7 +36,7 @@ export default () => {
         setError({ global: e.message });
       }
     },
-    [addWish, user]
+    [addWish]
   );
 
   const content = useMemo(() => {
@@ -65,18 +61,18 @@ export default () => {
         ))}
       </div>
     );
-  }, [wishes, isInitiallyFetched, removeWish]);
+  }, [wishes, isInitiallyFetched, removeWish, updateWish]);
 
   return (
     <div className={s.wishList}>
       <Container>
         {isInitiallyFetched ? (
           <>
-            {content}
-
             {error && <Error>{error}</Error>}
 
             <WishForm submitText="Добавить желание" submit={addSubmit} />
+
+            {content}
           </>
         ) : (
           <div className={s.loading}>

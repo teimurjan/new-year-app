@@ -3,7 +3,7 @@ import React, {
   FormEvent,
   useState,
   ChangeEvent,
-  useMemo
+  SyntheticEvent
 } from "react";
 
 import Button from "../button";
@@ -21,6 +21,7 @@ interface IProps {
     name: string;
     link?: string;
   };
+  onCancelClick?: (e: SyntheticEvent<HTMLElement>) => any;
 }
 
 interface IErrors {
@@ -38,7 +39,8 @@ const isValidURL = (url: string) => {
 export default ({
   submit,
   submitText,
-  defaultValues = { name: "", link: "" }
+  defaultValues = { name: "", link: "" },
+  onCancelClick
 }: IProps) => {
   const { user } = useAuth()!;
 
@@ -110,6 +112,15 @@ export default ({
       >
         {submitText}
       </Button>
+      {onCancelClick && (
+        <Button
+          className={s.cancelBtn}
+          onClick={onCancelClick}
+          danger
+        >
+          Отменить
+        </Button>
+      )}
     </Form>
   );
 };
